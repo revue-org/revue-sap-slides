@@ -26,7 +26,7 @@
   
 
     <section><h1 id="introduction">Introduction</h1>
-<p>Revue is a distributed real-time system for video surveillance. It allows the user to:</p>
+<p><strong>Revue</strong> is a distributed real-time system for video surveillance. It allows the user to:</p>
 <ol>
 <li>
 <p>Check an environment remotely through cameras</p>
@@ -37,17 +37,17 @@
 <li>
 <p>Add security rules based on his needs triggering alarms</p>
 <ol>
-<li>Intrusions in case of broken safety rule by cameras</li>
-<li>Outliers in case of broken safety rule by sensors</li>
+<li>Intrusions in case of violated safety rule by cameras</li>
+<li>Outliers in case of violated safety rule by sensors</li>
 </ol>
 </li>
 </ol>
 <p>Due to his level of configurability, Revue can be used in multiple scenarios.</p>
 </section><section>
-<h2 id="requirements">Requirements</h2>
+<h1 id="requirements">Requirements</h1>
 <p>Detailed requirements can be found in the <a href="https://revue-org.github.io/revue/docs/report/analysis/business-requirements">documentation</a>.</p>
 </section><section>
-<h1 id="quality-attributes">Quality Attributes</h1>
+<h2 id="quality-attributes">Quality Attributes</h2>
 <p>System’s main properties:</p>
 <ul>
 <li>
@@ -65,12 +65,15 @@
 <li>
 <p><em>Modularity</em></p>
 </li>
+<li>
+<p><em>Energy Efficiency</em></p>
+</li>
 </ul>
 <p>More details in the <a href="https://revue-org.github.io/revue/docs/report/analysis/quality-attributes">documentation</a>.</p>
 </section><section>
 <h1 id="design">Design</h1>
 </section><section>
-<h1 id="event-storming">Event Storming</h1>
+<h2 id="event-storming">Event Storming</h2>
 <p>In order to create a better understanding of the domain, we used the Event Storming technique. We performed the following steps:</p>
 <ol>
 <li><strong>Unstructured exploration</strong>: the goal is to identify the main events</li>
@@ -82,7 +85,7 @@
 </ol>
 <p><a href="https://revue-org.github.io/revue/docs/report/design/event-storming">Documentation</a></p>
 </section><section>
-<h1 id="bouded-contexts">Bouded Contexts</h1>
+<h2 id="bounded-contexts">Bounded Contexts</h2>
 <p>After the event storming session, the following contexts have been identified:</p>
 <ul>
 <li><strong>Auth</strong>: Responsible for managing the authentication and authorization of the users. It also is responsible for managing the permissions of the users.</li>
@@ -93,17 +96,30 @@
 <li><strong>Location</strong>: Responsible for the location management of the system.</li>
 </ul>
 </section><section>
-<h2 id="bounded-contexts">Bounded Contexts</h2>
-<p><img src="https://revue-org.github.io/revue/assets/images/ContextMap-7e49c19a18bd072c726a8ec3ffe73d6e.png" alt="Bounded Contexts">
-Context Map</p>
+<h2 id="context-map">Context Map</h2>
+<p><img src="https://revue-org.github.io/revue/assets/images/ContextMap-7e49c19a18bd072c726a8ec3ffe73d6e.png" alt="Context Map"></p>
 </section><section>
 <h1 id="architecture">Architecture</h1>
 <p>We chose to use a microservices architecture for the system. This architecture consists on designing software applications as suites of independently deployable services. Each service runs in its own process and communicates with other services through a well-defined interface.</p>
-<p><a href="https://revue-org.github.io/revue/docs/report/design/architecture/documentation#components--connectors">Components &amp; connectors view</a>
-<a href="https://revue-org.github.io/revue/docs/report/design/architecture/documentation#module-view">Module view</a>
-<a href="https://revue-org.github.io/revue/docs/report/design/architecture/documentation#deployment-view">Deployment view</a></p>
+<p><a href="https://revue-org.github.io/revue/docs/report/design/architecture/documentation#components--connectors">Components &amp; Connectors view</a></p>
+<p><a href="https://revue-org.github.io/revue/docs/report/design/architecture/documentation#module-view">Module view</a></p>
+<p><a href="https://revue-org.github.io/revue/docs/report/design/architecture/documentation#deployment-view">Deployment view</a></p>
 </section><section>
-<h1 id="clean-architecture">Clean Architecture</h1>
+<h2 id="microservices">Microservices</h2>
+<p>Using the <em>Bounded Contexts Decomposition Strategy</em>, we identified the following microservices:</p>
+<ul>
+<li><strong>Auth Service</strong>: Responsible for managing the authentication and authorization of the users.</li>
+<li><strong>User Service</strong>: Responsible for managing the users of the system.</li>
+<li><strong>Device Service</strong>: Responsible for managing the devices connected to the system.</li>
+<li><strong>Monitoring Service</strong>: Responsible for managing the data produced by the devices.</li>
+<li><strong>Alarm Service</strong>: Responsible for managing security rules and anomalies detections.</li>
+<li><strong>Recognition Service</strong>: Responsible for performing object recognition on cameras video streams.</li>
+<li><strong>Notification Service</strong>: Responsible for managing the notifications of the system.</li>
+<li><strong>Location Service</strong>: Responsible for the location management of the system.</li>
+<li><strong>Log Service</strong>: Responsible for storing events that occur in the system.</li>
+</ul>
+</section><section>
+<h2 id="clean-architecture">Clean Architecture</h2>
 <p>The design of all relevant microservices follows the Clean Architecture pattern. This helped us in maintaining a core domain design that abstracts away from all technical issues. As showed in the picture above, we made use of the following layers:</p>
 <ul>
 <li><strong>Domain</strong>: DDD entities, value objects, factories, …</li>
@@ -113,7 +129,7 @@ Context Map</p>
 </ul>
 <p><a href="https://revue-org.github.io/revue/docs/report/design/architecture/microservices#clean-architecture">Documentation</a></p>
 </section><section>
-<h1 id="microservices-patterns">Microservices patterns</h1>
+<h2 id="microservices-patterns">Microservices patterns</h2>
 <p>We reasoned about:</p>
 <ul>
 <li><strong>Communication patterns</strong></li>
@@ -132,6 +148,26 @@ Context Map</p>
 </li>
 </ul>
 <p><a href="https://revue-org.github.io/revue/docs/report/design/architecture/patterns">Documentation</a></p>
+</section><section>
+<h1 id="deployment">Deployment</h1>
+<p>Two way to deploy the system:</p>
+<ol>
+<li><strong>Docker Compose</strong>: for local development and testing</li>
+<li><strong>Kubernetes</strong>: for production</li>
+</ol>
+<p><a href="https://revue-org.github.io/revue/docs/category/deployment">Documentation</a></p>
+</section><section>
+<h2 id="docker-compose">Docker Compose</h2>
+<p>The system is</p>
+</section><section>
+<h2 id="kubernetes">Kubernetes</h2>
+<ul>
+<li>Configuration files for Kubernetes and <code>deploy</code> script are available in the repository <a href="https://github.com/revue-org/revue-kubernetes/">revue-kubernetes</a></li>
+<li>It is provided an example of how to deploy the system on a Raspberry Pi cluster, using the <em>k3s</em> distribution.</li>
+</ul>
+</section><section>
+<h3 id="cluster-overview">Cluster Overview</h3>
+<p><img src="https://revue-org.github.io/revue/assets/images/kubernetes-deployment-2564f960a43a371d629d42d0a8b00a55.png" alt="Context Map"></p>
 </section><section>
 </section>
 
