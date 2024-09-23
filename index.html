@@ -25,7 +25,10 @@
       <div class="slides">
   
 
-    <section><h1 id="introduction">Introduction</h1>
+    <section><h1 id="revue">Revue</h1>
+<h2 id="a-real-time-video-surveillance-and-environment-monitoring-system">A real-time video surveillance and environment monitoring system</h2>
+</section><section>
+<h1 id="introduction">Introduction</h1>
 <p><strong>Revue</strong> is a distributed real-time system for video surveillance. It allows the user to:</p>
 <ol>
 <li>
@@ -43,6 +46,8 @@
 </li>
 </ol>
 <p>Due to his level of configurability, Revue can be used in multiple scenarios.</p>
+</section><section>
+<h1 id="analysis">Analysis</h1>
 </section><section>
 <h1 id="requirements">Requirements</h1>
 <p>Detailed requirements can be found in the <a href="https://revue-org.github.io/revue/docs/report/analysis/business-requirements">documentation</a>.</p>
@@ -69,7 +74,7 @@
 <p><em>Energy Efficiency</em></p>
 </li>
 </ul>
-<p>More details in the <a href="https://revue-org.github.io/revue/docs/report/analysis/quality-attributes">documentation</a>.</p>
+<p><a href="https://revue-org.github.io/revue/docs/report/analysis/quality-attributes">Documentation</a>.</p>
 </section><section>
 <h1 id="design">Design</h1>
 </section><section>
@@ -101,9 +106,20 @@
 </section><section>
 <h1 id="architecture">Architecture</h1>
 <p>We chose to use a microservices architecture for the system. This architecture consists on designing software applications as suites of independently deployable services. Each service runs in its own process and communicates with other services through a well-defined interface.</p>
+<ul>
+<li>
 <p><a href="https://revue-org.github.io/revue/docs/report/design/architecture/documentation#components--connectors">Components &amp; Connectors view</a></p>
+</li>
+<li>
+<p><a href="https://revue-org.github.io/revue/docs/report/design/architecture/documentation#components--connectors">Components &amp; connectors view</a></p>
+</li>
+<li>
 <p><a href="https://revue-org.github.io/revue/docs/report/design/architecture/documentation#module-view">Module view</a></p>
+</li>
+<li>
 <p><a href="https://revue-org.github.io/revue/docs/report/design/architecture/documentation#deployment-view">Deployment view</a></p>
+</li>
+</ul>
 </section><section>
 <h2 id="microservices">Microservices</h2>
 <p>Using the <em>Bounded Contexts Decomposition Strategy</em>, we identified the following microservices:</p>
@@ -132,15 +148,24 @@
 <h2 id="microservices-patterns">Microservices patterns</h2>
 <p>We reasoned about:</p>
 <ul>
-<li><strong>Communication patterns</strong></li>
+<li><strong>Communication patterns</strong>
+<ul>
 <li>Remote Procedure Invocation</li>
 <li>Asynchronous Messaging</li>
-<li><strong>External API patterns</strong></li>
+</ul>
+</li>
+<li><strong>External API patterns</strong>
+<ul>
 <li>API Gateway (reverse proxy)</li>
-<li><strong>Deployment patterns</strong></li>
+</ul>
+</li>
+<li><strong>Deployment patterns</strong>
+<ul>
 <li>Service as container</li>
 <li>Database per service</li>
 <li>Externalized configuration</li>
+</ul>
+</li>
 <li><strong>Security patterns</strong>
 <ul>
 <li>Token-based security</li>
@@ -182,7 +207,7 @@
 
 <a href="/revue-slides/reveal-js/dist/print/" id="print-location" style="display: none;"></a>
 
-<script type="application/json" id="reveal-hugo-site-params">{"custom_theme":"custom-theme.scss","custom_theme_compile":true,"custom_theme_options":{"enablesourcemap":true,"targetpath":"css/custom-theme.css"},"height":"900","highlight_theme":"solarized-dark","history":true,"mermaid":[{}],"slide_number":true,"theme":"league","transition":"slide","transition_speed":"fast","width":"1440"}</script>
+<script type="application/json" id="reveal-hugo-site-params">{"custom_theme":"custom-theme.scss","custom_theme_compile":true,"custom_theme_options":{"enablesourcemap":true,"targetpath":"css/custom-theme.css"},"height":"100%","highlight_theme":"solarized-dark","history":true,"mermaid":[{}],"slide_number":true,"theme":"league","transition":"slide","transition_speed":"fast","width":"100%"}</script>
 <script type="application/json" id="reveal-hugo-page-params">null</script>
 
 <script src="/revue-slides/reveal-js/dist/reveal.js"></script>
