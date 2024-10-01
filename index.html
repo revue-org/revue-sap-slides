@@ -28,24 +28,25 @@
     <section><h1 id="revue">Revue</h1>
 <h2 id="a-real-time-video-surveillance-and-environment-monitoring-system">A real-time video surveillance and environment monitoring system</h2>
 </section><section>
-<p>&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Revue&lt;/strong&gt; is a distributed real-time system for video surveillance. It allows the user to:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Check an environment remotely through cameras&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Monitor an environment using sensors&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Add security rules based on his needs triggering alarms&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Intrusions in case of violated safety rule by cameras&lt;/li&gt;
-&lt;li&gt;Outliers in case of violated safety rule by sensors&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Due to his level of configurability, Revue can be used in multiple scenarios.&lt;/p&gt;</p>
+<!-- this file includes generated content. Do not edit. Edit content/_generator.md, instead. -->
+<h1 id="introduction">Introduction</h1>
+<p><strong>Revue</strong> is a distributed real-time system for video surveillance. It allows the user to:</p>
+<ol>
+<li>
+<p>Check an environment remotely through cameras</p>
+</li>
+<li>
+<p>Monitor an environment using sensors</p>
+</li>
+<li>
+<p>Add security rules based on his needs triggering alarms</p>
+<ol>
+<li>Intrusions in case of violated safety rule by cameras</li>
+<li>Outliers in case of violated safety rule by sensors</li>
+</ol>
+</li>
+</ol>
+<p>Due to his level of configurability, Revue can be used in multiple scenarios.</p>
 </section><section>
 <h1 id="analysis">Analysis</h1>
 </section><section>
@@ -78,63 +79,69 @@
 </section><section>
 <h1 id="design">Design</h1>
 </section><section>
-<p>&lt;h2 id="event-storming"&gt;Event Storming&lt;/h2&gt;
-&lt;p&gt;In order to create a better understanding of the domain, we used the Event Storming technique. We performed the following steps:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Unstructured exploration&lt;/strong&gt;: the goal is to identify the main events&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Timeline&lt;/strong&gt;: the events are ordered in time&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Pivotal events &amp;amp; pain points&lt;/strong&gt;: discussion about critical point that require attention and reasoning on events that have impact on the domain.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Actors, Commands, Policies and Read Models&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Aggregates&lt;/strong&gt;: groping of event into aggregates&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Bounded contexts&lt;/strong&gt;: identification of bounded contexts based on aggregates interaction&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;a href="https://revue-org.github.io/revue/docs/report/design/event-storming"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</p>
+<!-- this file includes generated content. Do not edit. Edit content/_generator.md, instead. -->
+<h2 id="event-storming">Event Storming</h2>
+<p>In order to create a better understanding of the domain, we used the Event Storming technique. We performed the following steps:</p>
+<ol>
+<li><strong>Unstructured exploration</strong>: the goal is to identify the main events</li>
+<li><strong>Timeline</strong>: the events are ordered in time</li>
+<li><strong>Pivotal events &amp; pain points</strong>: discussion about critical point that require attention and reasoning on events that have impact on the domain.</li>
+<li><strong>Actors, Commands, Policies and Read Models</strong></li>
+<li><strong>Aggregates</strong>: groping of event into aggregates</li>
+<li><strong>Bounded contexts</strong>: identification of bounded contexts based on aggregates interaction</li>
+</ol>
+<p><a href="https://revue-org.github.io/revue/docs/report/design/event-storming">Documentation</a></p>
 </section><section>
-<p>&lt;h2 id="bounded-contexts"&gt;Bounded Contexts&lt;/h2&gt;
-&lt;p&gt;After the event storming session, the following contexts have been identified:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Auth&lt;/strong&gt;: Responsible for managing the authentication and authorization of the users. It also is responsible for managing the permissions of the users.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;User&lt;/strong&gt;: This context is responsible for managing the users of the system, in particular, nothing regarding the authentication process but only the management of the user registry.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Monitoring&lt;/strong&gt;: It is responsible for managing the devices and the data they produce. This context is responsible for consulting the data produced by the devices, their configurations and everything regarding the WoT interactions.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Alarm&lt;/strong&gt;: Responsible for managing the alarms in the overall system. It is also responsible for the object recognition feature of the system.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Notification&lt;/strong&gt;: Responsible for managing the notifications of the system. It is responsible for sending notifications to the users when particular events occur.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Location&lt;/strong&gt;: Responsible for the location management of the system.&lt;/li&gt;
-&lt;/ul&gt;</p>
+<!-- this file includes generated content. Do not edit. Edit content/_generator.md, instead. -->
+<h2 id="bounded-contexts">Bounded Contexts</h2>
+<p>After the event storming session, the following contexts have been identified:</p>
+<ul>
+<li><strong>Auth</strong>: Responsible for managing the authentication and authorization of the users. It also is responsible for managing the permissions of the users.</li>
+<li><strong>User</strong>: This context is responsible for managing the users of the system, in particular, nothing regarding the authentication process but only the management of the user registry.</li>
+<li><strong>Monitoring</strong>: It is responsible for managing the devices and the data they produce. This context is responsible for consulting the data produced by the devices, their configurations and everything regarding the WoT interactions.</li>
+<li><strong>Alarm</strong>: Responsible for managing the alarms in the overall system. It is also responsible for the object recognition feature of the system.</li>
+<li><strong>Notification</strong>: Responsible for managing the notifications of the system. It is responsible for sending notifications to the users when particular events occur.</li>
+<li><strong>Location</strong>: Responsible for the location management of the system.</li>
+</ul>
 </section><section>
-<p>&lt;h2 id="context-map"&gt;Context Map&lt;/h2&gt;
-&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/revue-org/revue/main/docs/website/docs/report/img/ContextMap.png" alt="Context Map"&gt;&lt;/p&gt;</p>
+<!-- this file includes generated content. Do not edit. Edit content/_generator.md, instead. -->
+<h2 id="context-map">Context Map</h2>
+<p><img src="https://raw.githubusercontent.com/revue-org/revue/main/docs/website/docs/report/img/ContextMap.png" alt="Context Map"></p>
 </section><section>
-<p>&lt;h1 id="architecture"&gt;Architecture&lt;/h1&gt;
-&lt;p&gt;We chose to use a microservices architecture for the system. This architecture consists on designing software applications as suites of independently deployable services. Each service runs in its own process and communicates with other services through a well-defined interface.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://revue-org.github.io/revue/docs/report/design/architecture/documentation#components–connectors"&gt;Components &amp;amp; connectors view&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://revue-org.github.io/revue/docs/report/design/architecture/documentation#module-view"&gt;Module view&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://revue-org.github.io/revue/docs/report/design/architecture/documentation#deployment-view"&gt;Deployment view&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</p>
+<!-- this file includes generated content. Do not edit. Edit content/_generator.md, instead. -->
+<h1 id="architecture">Architecture</h1>
+<p>We chose to use a microservices architecture for the system. This architecture consists on designing software applications as suites of independently deployable services. Each service runs in its own process and communicates with other services through a well-defined interface.</p>
+<ul>
+<li><a href="https://revue-org.github.io/revue/docs/report/design/architecture/documentation#components--connectors">Components &amp; connectors view</a></li>
+<li><a href="https://revue-org.github.io/revue/docs/report/design/architecture/documentation#module-view">Module view</a></li>
+<li><a href="https://revue-org.github.io/revue/docs/report/design/architecture/documentation#deployment-view">Deployment view</a></li>
+</ul>
 </section><section>
-<p>&lt;h2 id="microservices"&gt;Microservices&lt;/h2&gt;
-&lt;p&gt;Using the &lt;em&gt;Bounded Contexts Decomposition Strategy&lt;/em&gt;, we identified the following microservices:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Auth Service&lt;/strong&gt;: Responsible for managing the authentication and authorization of the users.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;User Service&lt;/strong&gt;: Responsible for managing the users of the system.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Device Service&lt;/strong&gt;: Responsible for managing the devices connected to the system.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Monitoring Service&lt;/strong&gt;: Responsible for managing the data produced by the devices.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Alarm Service&lt;/strong&gt;: Responsible for managing security rules and anomalies detections.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Recognition Service&lt;/strong&gt;: Responsible for performing object recognition on cameras video streams.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Notification Service&lt;/strong&gt;: Responsible for managing the notifications of the system.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Location Service&lt;/strong&gt;: Responsible for the location management of the system.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Log Service&lt;/strong&gt;: Responsible for storing events that occur in the system.&lt;/li&gt;
-&lt;/ul&gt;</p>
+<!-- this file includes generated content. Do not edit. Edit content/_generator.md, instead. -->
+<h2 id="microservices">Microservices</h2>
+<p>Using the <em>Bounded Contexts Decomposition Strategy</em>, we identified the following microservices:</p>
+<ul>
+<li><strong>Auth Service</strong>: Responsible for managing the authentication and authorization of the users.</li>
+<li><strong>User Service</strong>: Responsible for managing the users of the system.</li>
+<li><strong>Device Service</strong>: Responsible for managing the devices connected to the system.</li>
+<li><strong>Monitoring Service</strong>: Responsible for managing the data produced by the devices.</li>
+<li><strong>Alarm Service</strong>: Responsible for managing security rules and anomalies detections.</li>
+<li><strong>Recognition Service</strong>: Responsible for performing object recognition on cameras video streams.</li>
+<li><strong>Notification Service</strong>: Responsible for managing the notifications of the system.</li>
+<li><strong>Location Service</strong>: Responsible for the location management of the system.</li>
+<li><strong>Log Service</strong>: Responsible for storing events that occur in the system.</li>
+</ul>
 </section><section>
-<p>&lt;h2 id="clean-architecture"&gt;Clean Architecture&lt;/h2&gt;
-&lt;p&gt;The design of all relevant microservices follows the Clean Architecture pattern. This helped us in maintaining a core domain design that abstracts away from all technical issues. As showed in the picture above, we made use of the following layers:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Domain&lt;/strong&gt;: DDD entities, value objects, factories, &amp;hellip;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Application&lt;/strong&gt;: DDD services, repositories, &amp;hellip;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Presentation&lt;/strong&gt;: Machinery to translate external data representation to domain entities and vice versa.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Infrastructure&lt;/strong&gt;: Mostly external service implementation, DB interfaces, REST APIs, Events managers, &amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href="https://revue-org.github.io/revue/docs/report/design/architecture/microservices#clean-architecture"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</p>
+<!-- this file includes generated content. Do not edit. Edit content/_generator.md, instead. -->
+<h2 id="clean-architecture">Clean Architecture</h2>
+<p>The design of all relevant microservices follows the Clean Architecture pattern. This helped us in maintaining a core domain design that abstracts away from all technical issues. As showed in the picture above, we made use of the following layers:</p>
+<ul>
+<li><strong>Domain</strong>: DDD entities, value objects, factories, …</li>
+<li><strong>Application</strong>: DDD services, repositories, …</li>
+<li><strong>Presentation</strong>: Machinery to translate external data representation to domain entities and vice versa.</li>
+<li><strong>Infrastructure</strong>: Mostly external service implementation, DB interfaces, REST APIs, Events managers, …</li>
+</ul>
+<p><a href="https://revue-org.github.io/revue/docs/report/design/architecture/microservices#clean-architecture">Documentation</a></p>
 </section><section>
 <h2 id="microservices-patterns">Microservices patterns</h2>
 <p>We reasoned about:</p>
@@ -165,22 +172,25 @@
 </ul>
 <p><a href="https://revue-org.github.io/revue/docs/report/design/architecture/patterns">Documentation</a></p>
 </section><section>
-<p>&lt;h1 id="deployment"&gt;Deployment&lt;/h1&gt;
-&lt;p&gt;Two way to deploy the system:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Docker Compose&lt;/strong&gt;: for local development and testing&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;: for production&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;a href="https://revue-org.github.io/revue/docs/category/deployment"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</p>
+<!-- this file includes generated content. Do not edit. Edit content/_generator.md, instead. -->
+<h1 id="deployment">Deployment</h1>
+<p>Two way to deploy the system:</p>
+<ol>
+<li><strong>Docker Compose</strong>: for local development and testing</li>
+<li><strong>Kubernetes</strong>: for production</li>
+</ol>
+<p><a href="https://revue-org.github.io/revue/docs/category/deployment">Documentation</a></p>
 </section><section>
-<p>&lt;h2 id="kubernetes"&gt;Kubernetes&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Configuration files for Kubernetes and &lt;code&gt;deploy&lt;/code&gt; script are available in the repository &lt;a href="https://github.com/revue-org/revue-kubernetes/"&gt;revue-kubernetes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;It is provided an example of how to deploy the system on a Raspberry Pi cluster, using the &lt;em&gt;k3s&lt;/em&gt; distribution.&lt;/li&gt;
-&lt;/ul&gt;</p>
+<!-- this file includes generated content. Do not edit. Edit content/_generator.md, instead. -->
+<h2 id="kubernetes">Kubernetes</h2>
+<ul>
+<li>Configuration files for Kubernetes and <code>deploy</code> script are available in the repository <a href="https://github.com/revue-org/revue-kubernetes/">revue-kubernetes</a></li>
+<li>It is provided an example of how to deploy the system on a Raspberry Pi cluster, using the <em>k3s</em> distribution.</li>
+</ul>
 </section><section>
-<p>&lt;h3 id="cluster-overview"&gt;Cluster Overview&lt;/h3&gt;
-&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/revue-org/revue/main/docs/website/docs/report/img/kubernetes-deployment.png" alt="Kubernetes deployment"&gt;&lt;/p&gt;</p>
+<!-- this file includes generated content. Do not edit. Edit content/_generator.md, instead. -->
+<h3 id="cluster-overview">Cluster Overview</h3>
+<p><img src="https://raw.githubusercontent.com/revue-org/revue/main/docs/website/docs/report/img/kubernetes-deployment.png" alt="Kubernetes deployment"></p>
 </section><section>
 <h2 id="monitoring">Monitoring</h2>
 <p>To monitor the system:</p>
